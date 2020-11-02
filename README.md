@@ -32,6 +32,12 @@ Scratch that, baby steps first. I'd rather create a very basic representation cl
 
 - [Planetary information](https://www.windows2universe.org/our_solar_system/planets_table.html)
 
+## Problems
+
+- facing some issues with distance and size
+- irl sizes will create problems, sun is wayyyyy big compared to most planets and distances
+- gotta reach some sizing compromise
+
 ## Bibliography
 
 - [Front End Masters Course by Matt DesLauriers](https://frontendmasters.com/courses/webgl-shaders/)
