@@ -28,6 +28,10 @@ But for now, what I'm thinking is
 Once I'm done with this, I'll try creating the rest of the planets/moons
 Scratch that, baby steps first. I'd rather create a very basic representation close to real life in distance/rotation and then go in and add details like textures.
 
+### Data References
+
+- [Planetary information](https://www.windows2universe.org/our_solar_system/planets_table.html)
+
 ## Bibliography
 
 - [Front End Masters Course by Matt DesLauriers](https://frontendmasters.com/courses/webgl-shaders/)

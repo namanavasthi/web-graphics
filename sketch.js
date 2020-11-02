@@ -6,25 +6,27 @@ require("three/examples/js/controls/OrbitControls");
 
 const canvasSketch = require("canvas-sketch");
 
+const distanceConversion = 1;
+
 const settings = {
   // Make the loop animated
   animate: true,
   // Get a WebGL canvas rather than 2D
-  context: "webgl"
+  context: "webgl",
 };
 
 const sketch = ({ context }) => {
   // Create a renderer
   const renderer = new THREE.WebGLRenderer({
-    canvas: context.canvas
+    canvas: context.canvas,
   });
 
   // WebGL background color
   renderer.setClearColor("#000", 1);
 
   // Setup a camera
-  const camera = new THREE.PerspectiveCamera(50, 1, 0.01, 100);
-  camera.position.set(0, 0, -4);
+  const camera = new THREE.PerspectiveCamera(50, 1, 0.01, 1000);
+  camera.position.set(-400, 100, -400);
   camera.lookAt(new THREE.Vector3());
 
   // Setup camera controller
@@ -36,15 +38,31 @@ const sketch = ({ context }) => {
   // Setup a geometry
   const geometry = new THREE.SphereGeometry(1, 32, 16);
 
+  // Setup a loader
+  // const loader = new THREE.TextureLoader();
+
+  // const earthTexture = loader.load();
+
   // Setup a material
-  const material = new THREE.MeshBasicMaterial({
+  const sunMaterial = new THREE.MeshNormalMaterial({
+    color: "blue",
+    flatShading: true,
+  });
+
+  const earthMaterial = new THREE.MeshBasicMaterial({
     color: "red",
-    wireframe: true
   });
 
   // Setup a mesh with geometry + material
-  const mesh = new THREE.Mesh(geometry, material);
-  scene.add(mesh);
+  const sunMesh = new THREE.Mesh(geometry, sunMaterial);
+  sunMesh.position.set(0, 0, 0);
+  sunMesh.scale.setScalar(109);
+  scene.add(sunMesh);
+
+  const earthMesh = new THREE.Mesh(geometry, earthMaterial);
+  earthMesh.position.set(-200, 0, 0);
+  earthMesh.scale.setScalar(1);
+  scene.add(earthMesh);
 
   // draw each frame
   return {
@@ -57,6 +75,8 @@ const sketch = ({ context }) => {
     },
     // Update & render your scene here
     render({ time }) {
+      sunMesh.rotation.y = time / 27;
+      earthMesh.rotation.y = time;
       controls.update();
       renderer.render(scene, camera);
     },
@@ -64,7 +84,7 @@ const sketch = ({ context }) => {
     unload() {
       controls.dispose();
       renderer.dispose();
-    }
+    },
   };
 };
 
