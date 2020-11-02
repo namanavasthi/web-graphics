@@ -1,0 +1,24 @@
+{
+  "name": "web-graphics",
+  "version": "1.0.0",
+  "description": "Playing around with web graphics to see what it has to offer. Got inspired by a [Google IO talk from May 9, 2019](https://www.youtube.com/watch?v=K2JzIUIHIhc&t=555s). I know it's 2020 but better late than never. Anyways, so I ended up on Frontend masters again for help and found a great course by [Matt DesLauriers](https://frontendmasters.com/courses/webgl-shaders/) and this is pretty much that course work.",
+  "main": "sketch.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/namanavasthi/web-graphics.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/namanavasthi/web-graphics/issues"
+  },
+  "homepage": "https://github.com/namanavasthi/web-graphics#readme",
+  "dependencies": {
+    "canvas-sketch": "^0.7.4",
+    "three": "^0.122.0"
+  }
+}
